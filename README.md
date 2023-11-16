@@ -15,13 +15,13 @@ We will implement a hardware page table walker with Chisel (Scala) for an open-s
 
 For applications that span a large memory footprint, address translation takes place often and can sometimes take up a large amount of the overall execution time. This is due to the nature of traditional Radix Page Tables requiring sequential memory access to fetch the page table entry (PTE). At the same time, scaling TLB is difficult as large TLBs require longer latency and power. The Elastic Cuckoo Page Table proposal attempts to address the critical path of page table walks[1]. The idea is to re-format the multi-level structure of traditional page tables into a flat layout enabling parallel look-up to all ways of the page table entries.  
 
-Figures 1, and 2 (Skarlatos et al., 2020) are adapted from the original paper for illustration. [Figure 1](https://www.notion.so/15-618-Final-Project-Proposal-e704374c13914f7a971ab86b94ce65d7?pvs=21) shows the traditional Radix page table layout which requires 4 sequential accesses to fetch the PTE. [Figure 2](https://www.notion.so/15-618-Final-Project-Proposal-e704374c13914f7a971ab86b94ce65d7?pvs=21) shows the ECPT layout being flat where the page table walker can issue parallel memory requests to fetch the PTEs. Each way is a hashed page table and each entry is fetched with the hashed VPN Tag to index into the page tables. 
+Figures 1, and 2 (Skarlatos et al., 2020) are adapted from the original paper for illustration. [Figure 1] shows the traditional Radix page table layout which requires 4 sequential accesses to fetch the PTE. [Figure 2] shows the ECPT layout being flat where the page table walker can issue parallel memory requests to fetch the PTEs. Each way is a hashed page table and each entry is fetched with the hashed VPN Tag to index into the page tables. 
 
-![Figure 1: Radix page table address translation in x86-64. Adapted from Skarlatos, D., Kokolis, A., Xu, T., & Torrellas, J. (2020)](https://prod-files-secure.s3.us-west-2.amazonaws.com/f7b9fbbc-e9c9-4123-948b-2b5fa6d239d0/4ca33efe-3c2a-48cc-8e0e-6caab3640655/Untitled.png)
+![Figure 1: Radix page table address translation in x86-64. Adapted from Skarlatos, D., Kokolis, A., Xu, T., & Torrellas, J. (2020)](./images/radix_PT.png)
 
 Figure 1: Radix page table address translation in x86-64. Adapted from Skarlatos, D., Kokolis, A., Xu, T., & Torrellas, J. (2020)
 
-![Figure 2: Elastic cuckoo page tables for a process. Adapted from Skarlatos, D., Kokolis, A., Xu, T., & Torrellas, J. (2020)](https://prod-files-secure.s3.us-west-2.amazonaws.com/f7b9fbbc-e9c9-4123-948b-2b5fa6d239d0/5c748880-af5b-4111-b249-3b13b5bd5f6f/Untitled.png)
+![Figure 2: Elastic cuckoo page tables for a process. Adapted from Skarlatos, D., Kokolis, A., Xu, T., & Torrellas, J. (2020)](./images/ECPT_PT.png)
 
 Figure 2: Elastic cuckoo page tables for a process. Adapted from Skarlatos, D., Kokolis, A., Xu, T., & Torrellas, J. (2020)
 
