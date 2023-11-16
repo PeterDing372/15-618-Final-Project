@@ -80,7 +80,7 @@ The reason for using BOOM and Verilator is that first, both are open-source and 
 
 | Week Starting | Objective | Activities |
 | --- | --- | --- |
-| 2023-11-15 | Functionality of ECPT PTW | 1. Incorporate ECPT design with original PTW to satisfy ISA requirement  2. Testing correctness with standalone top-level testbench |
+| 2023-11-15 | Functionality of ECPT PTW | 1. Incorporate ECPT design with original PTW to satisfy ISA requirement /n 2. Testing correctness with standalone top-level testbench |
 | 2023-11-20 | Functionality of ECPT PTW  | 1. Finish verifying the functional correctness of PTW |
 | 2023-11-27 | Workload Page Table Dump | 1. Work on getting the page table dump and formatting the radix PTEs into an ECPT page tabl |
 | 2023-12-04 | Gather information from the simulation | 1. Compile the simulation binary and test on assembly
