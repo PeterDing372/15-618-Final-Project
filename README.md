@@ -2,7 +2,9 @@
 
 ## Title
 
-Performance evaluation on parallel address translation lookup using hardware page table walker supporting Elastic Cuckoo Page Table 
+Performance evaluation on parallel address translation lookup using hardware page table walker supporting Elastic Cuckoo Page Table  
+Team Member: Quanchen (Peter) Ding
+
 
 ## URL: 
 https://github.com/PeterDing372/15-618-Final-Project.git
