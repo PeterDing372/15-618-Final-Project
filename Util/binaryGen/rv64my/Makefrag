@@ -1,0 +1,10 @@
+#=======================================================================
+# Makefrag for rv64si tests
+#-----------------------------------------------------------------------
+
+rv64my_sc_tests = \
+    test1 test2 test3 ECPT
+
+rv64my_p_tests = $(addprefix rv64my-p-, $(rv64my_sc_tests))
+rv64my_v_tests = $(addprefix rv64my-v-, $(rv64my_sc_tests))
+rv64my_bare_tests = $(addprefix rv64my-bare-, $(rv64my_sc_tests))
